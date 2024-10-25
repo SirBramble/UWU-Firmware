@@ -1,0 +1,95 @@
+begin(keyboard)
+Layer 1
+	Button 1: ^
+	Button 2: 1
+	Button 3: 2
+	Button 4: 3
+	Button 5: 4
+	Button 6: 5
+	Button 7: 6
+	Button 8: 7
+	Button 9: 8
+	Button 10: 9
+	Button 11: 0
+	Button 12: \SZ_KEY
+	Button 13: \GRAVE_KEY
+	Button 14: \BACKSPACE_KEY
+	Button 15: \TAB_KEY
+	Button 16: q
+	Button 17: w
+	Button 18: e
+	Button 19: r
+	Button 20: t
+	Button 21: z
+	Button 22: u
+	Button 23: i
+	Button 24: o
+	Button 25: p
+	Button 26: \ue
+	Button 27: +
+	Button 28: \ENTER_KEY
+	Button 29: \CAPS_LOCK_KEY
+	Button 30: a
+	Button 31: s
+	Button 32: d
+	Button 33: f
+	Button 34: g
+	Button 35: h
+	Button 36: j
+	Button 37: k
+	Button 38: l
+	Button 39: \oe
+	Button 40: \ae
+	Button 41: #
+	Button 42: \LSHIFT_KEY
+	Button 43: <
+	Button 44: y
+	Button 45: x
+	Button 46: c
+	Button 47: v
+	Button 48: b
+	Button 49: n
+	Button 50: m
+	Button 51: ,
+	Button 52: .
+	Button 53: -
+	Button 54: \RSHIFT_KEY
+	Button 55: \LCTRL_KEY
+	Button 56: \WIN_KEY
+	Button 57: \LALT_KEY
+	Button 58: \SPACE_KEY
+	Button 59: \RALT_KEY
+	Button 60: \WIN_KEY
+	Button 61: \APP_KEY
+	Button 62: \RCTRL_KEY
+	Button 63:
+	Button 64:
+	Button 65:
+	Button 66: \DEL_KEY
+	Button 67:
+	Button 68:
+	Button 69: \UP_KEY
+	Button 70: \LEFT_KEY
+	Button 71: \DOWN_KEY
+	Button 72: \RIGHT_KEY
+	Button 73: \ESC_KEY
+	Button 74: \F1_KEY
+	Button 75: \F2_KEY
+	Button 76: \F3_KEY
+	Button 77: \F4_KEY
+	Button 78: \F5_KEY
+	Button 79: \F6_KEY
+	Button 80: \F7_KEY
+	Button 81: \F8_KEY
+	Button 82: \F9_KEY
+	Button 83: \F10_KEY
+	Button 84: \F11_KEY
+	Button 85: \F12_KEY
+	Button 86:
+	Button 87:
+	Button 88:
+end(keyboard)
+begin(numpad1)
+Layer 1
+	Button 1: 1
+end(numpad1)
