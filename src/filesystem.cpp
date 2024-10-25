@@ -67,7 +67,8 @@ void filesystemSetup()
   flash.begin();
 
   // Set disk vendor id, product id and revision with string up to 8, 16, 4 characters respectively
-  usb_msc.setID("Typeuwu", "BIG DICK FLASH", "6.9"); // This is a easter egg. If you found this: congratulations, have a cookie.
+  //usb_msc.setID("Typeuwu", "BIG DICK FLASH", "6.9"); // This is a easter egg. If you found this: congratulations, have a cookie.
+  usb_msc.setID(USB_MSC_VENDOR_ID, USB_MSC_PRODUCT_ID, USB_MSC_PRODUCT_REV);
 
   // Set callback
   usb_msc.setReadWriteCallback(msc_read_cb, msc_write_cb, msc_flush_cb);
