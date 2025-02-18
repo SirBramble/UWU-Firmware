@@ -114,6 +114,8 @@ private:
   uint8_t led_remap[AMMOUNT_KEYS] = {KEYBOARD_KEY_TO_LED};
   //SM
   _state states[AMMOUNT_KEYS];
+  bool sm_flanc_pressed[AMMOUNT_KEYS];
+  bool sm_flanc_released[AMMOUNT_KEYS];
   void updateSM();
 };
 

@@ -595,6 +595,46 @@ void interpreter::interpret(key * inputKey, String inputString){
       inputKey->appendKeysycode(0x4C, 0, RID_KEYBOARD, 1);
       inputString.remove(0, 8);
     }
+    else if(inputSearch.Match("^(\\INS_KEY)") == REGEXP_MATCHED){
+      Serial.println("found INS");
+      inputKey->appendKeysycode(0x49, 0, RID_KEYBOARD, 1);
+      inputString.remove(0, 8);
+    }
+    else if(inputSearch.Match("^(\\HOME_KEY)") == REGEXP_MATCHED){
+      Serial.println("found HOME");
+      inputKey->appendKeysycode(0x4A, 0, RID_KEYBOARD, 1);
+      inputString.remove(0, 9);
+    }
+    else if(inputSearch.Match("^(\\END_KEY)") == REGEXP_MATCHED){
+      Serial.println("found HOME");
+      inputKey->appendKeysycode(0x4D, 0, RID_KEYBOARD, 1);
+      inputString.remove(0, 8);
+    }
+    else if(inputSearch.Match("^(\\PGUP_KEY)") == REGEXP_MATCHED){
+      Serial.println("found Page Up");
+      inputKey->appendKeysycode(0x4B, 0, RID_KEYBOARD, 1);
+      inputString.remove(0, 9);
+    }
+    else if(inputSearch.Match("^(\\PGDN_KEY)") == REGEXP_MATCHED){
+      Serial.println("found Page Down");
+      inputKey->appendKeysycode(0x4E, 0, RID_KEYBOARD, 1);
+      inputString.remove(0, 9);
+    }
+    else if(inputSearch.Match("^(\\PRINT_KEY)") == REGEXP_MATCHED){
+      Serial.println("found Print");
+      inputKey->appendKeysycode(0x46, 0, RID_KEYBOARD, 1);
+      inputString.remove(0, 10);
+    }
+    else if(inputSearch.Match("^(\\ROLL_KEY)") == REGEXP_MATCHED){
+      Serial.println("found Roll");
+      inputKey->appendKeysycode(0x47, 0, RID_KEYBOARD, 1);
+      inputString.remove(0, 9);
+    }
+    else if(inputSearch.Match("^(\\BREAK_KEY)") == REGEXP_MATCHED){
+      Serial.println("found BREAK");
+      inputKey->appendKeysycode(0x48, 0, RID_KEYBOARD, 1);
+      inputString.remove(0, 10);
+    }
     else if(inputSearch.Match("^(\\ENTER_KEY)") == REGEXP_MATCHED){
       Serial.println("found ENTER");
       inputKey->appendKeysycode(0x28, 0, RID_KEYBOARD, 1);

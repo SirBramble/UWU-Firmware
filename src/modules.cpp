@@ -16,6 +16,8 @@ void _keyboard::init(){
   for(int i = 0; i < AMMOUNT_KEYS; i++){
     pressed[i] = 0;
     states[i] = IDLE;
+    sm_flanc_pressed[i] = false;
+    sm_flanc_released[i] = false;
   }
 }
 
@@ -67,33 +69,56 @@ void _keyboard::updateSM(){
   for(int i = 0; i < AMMOUNT_KEYS; i++){
     switch(states[i]){
       case IDLE:
-        if(pressed[i]){
+        sm_flanc_released[i] = false;
+        if(pressed[i])
+        {
           states[i] = TRANSITION;
         }
         break;
+
       case TRANSITION:
-        if(pressed[i]){
+        if(pressed[i])
+        {
           states[i] = PRESSED;
+          sm_flanc_pressed[i] = true;
         }
-        else {
+        else
+        {
           states[i] = IDLE;
+          sm_flanc_released[i] = true;
         }
         break;
+
       case PRESSED:
-        if(pressed[i] == 0){
+        sm_flanc_pressed[i] = false;
+        if(pressed[i] == 0)
+        {
           states[i] = RELEASED;
         }
         break;
+
       case RELEASED:
-        if(pressed[i] == 0){
+        if(pressed[i] == 0)
+        {
           states[i] = IDLE;
+          sm_flanc_released[i] = true;
         }
+        else
+        {
+          states[i] = PRESSED;
+          sm_flanc_pressed[i] = true;
+        }
+        break;
+      
+      default:
+        states[i] = IDLE;
+        break;
     }
   }
 }
 
 bool _keyboard::isPressed(int position){
-  if(states[position] == TRANSITION){
+  if(sm_flanc_pressed[position]){
     return true;
   }
   else{
@@ -102,7 +127,7 @@ bool _keyboard::isPressed(int position){
 }
 
 bool _keyboard::isReleased(int position){
-  if(states[position] == RELEASED){
+  if(sm_flanc_released[position]){
     return true;
   }
   else{
