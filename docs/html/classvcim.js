@@ -1,0 +1,26 @@
+var classvcim =
+[
+    [ "vcim", "classvcim.html#ae97f916f21a46f8dc181c6754723364c", null ],
+    [ "check_update_button_states", "classvcim.html#a320eb056e29f39cec280c3be06799f17", null ],
+    [ "check_update_encoder_button_states", "classvcim.html#a3d7f348b82c330961a5596099576e466", null ],
+    [ "check_update_encoder_postitions", "classvcim.html#acb91a0145ddc815eb6905ba74a5cadd4", null ],
+    [ "check_update_fader_positions", "classvcim.html#afd2883dc09c6e63ea669a9354b60c911", null ],
+    [ "get_button_states", "classvcim.html#ab539307c9c655cc10b1476a4dadc1cf1", null ],
+    [ "get_encoder_button_states", "classvcim.html#a781dcdff1a769b100c2ae5dbb64cbe59", null ],
+    [ "get_encoder_postitions", "classvcim.html#ac3c70213b3274861ce3bbb5a8c494291", null ],
+    [ "get_fader_positions", "classvcim.html#ac9b266c064a822fb02b1bdc732ad7752", null ],
+    [ "get_update", "classvcim.html#a30e761710e30fc86ecc4b1b645b2c533", null ],
+    [ "init", "classvcim.html#aa6d24884d7b69fdf0b6047e20964b524", null ],
+    [ "send_update", "classvcim.html#a03273ec8b8a5313407b522ea0e2dc373", null ],
+    [ "set_button_colours", "classvcim.html#a0093925a2395aa8057b4bce17f35272e", null ],
+    [ "set_button_states", "classvcim.html#ac8f7b1f7f1344bd5f0825665a68c8652", null ],
+    [ "set_encoder_button_states", "classvcim.html#a52f7bd013925b3af61975322eba10b78", null ],
+    [ "set_encoder_postitions", "classvcim.html#a20e287c3d71ebbedb06590e5f449839d", null ],
+    [ "set_fader_kd", "classvcim.html#add369fea77437c52bfcd358580640e2c", null ],
+    [ "set_fader_ki", "classvcim.html#ae399b7e0f67043a0eaeddbdacb55343d", null ],
+    [ "set_fader_kp", "classvcim.html#a6555d6d3ca385653efa6be012f5dea4a", null ],
+    [ "set_fader_pid_max_cycles", "classvcim.html#a4b76246df15a31c4433f29ba478e8abd", null ],
+    [ "set_fader_positions", "classvcim.html#a1b03c2c3a43bc9b509c45844ad2d2704", null ],
+    [ "set_ring_light_max_brightness", "classvcim.html#a92515470088354c281cd0466e70baedd", null ],
+    [ "update_available", "classvcim.html#aa6be30e1319449faddaa0cbe154f69f4", null ]
+];

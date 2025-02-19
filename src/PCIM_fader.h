@@ -1,3 +1,13 @@
+/**
+ * @file PCIM_fader.h
+ * @author Bramble
+ * @brief Header file for VMI PCIM Module
+ * @version 1.0
+ * @date 2025-02-18
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
 #ifndef PCIM_FADER_H
 #define PCIM_FADER_H
 

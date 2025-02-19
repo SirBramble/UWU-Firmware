@@ -1,3 +1,14 @@
+/**
+ * @file filesystem.h
+ * @author Bramble
+ * @brief Header file for filesystem
+ * Incorporates classes for creating the filesystem structure.
+ * @version 0.1
+ * @date 2025-02-18
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
 #ifndef FILESYSTEM
 #define FILESYSTEM
 
@@ -8,7 +19,16 @@
 #include <string>
 #include "lighting.h"
 
-#define MAX_WHILE_ITTERATIONS 3000          //limits the ammount of runs, that some while loops can do. Supposed to preven freezing
+/**
+ * @brief Limits the amount of runs, the keyboard tries to mount via USB until it switches to bluetooth mode
+ * 
+ */
+#define MAX_WHILE_ITTERATIONS 3000
+/**
+ * @brief Name of the configuration file located on the mounted flash drive.
+ * Will create a empty file, if not found.
+ * 
+ */
 #define CONFIG_FILENAME "Layout.txt"
 
 #define KEY_MOD_LCTRL  0x01
@@ -20,6 +40,13 @@
 #define KEY_MOD_RALT   0x40
 #define KEY_MOD_RMETA  0x80
 
+/**
+ * @brief Remapping table for mapping ASCII characters to keyboard inputs (modifiers and keycodes)
+ * The current version supports a german keyboard layout. Future Versions may support multiple layouts.
+ * If a different layout is required, the macro can be copied, renamed and modified.
+ * The modified Version can then be inserted in the 'ASCII_conv_table'.
+ * 
+ */
 #define HID_ASCII_TO_KEYCODE_GERMAN \
     {0              , 0                     }, /* 0x00 Null      */ \
     {0              , 0                     }, /* 0x01           */ \
@@ -164,35 +191,108 @@ enum
 
 #define MIDI_CC 0xB0
 
+/**
+ * @brief Initialises Flash and USB.
+ * 
+ */
 void filesystemSetup();
-void filesystemLoop();
+
+/**
+ * @brief Debug function to clear filesystem and flash and create a empty file
+ * 
+ */
 void filesystemClear();
-void filesystemTest();
+
+/**
+ * @brief Creates a empty config file
+ * 
+ */
 void filesystemCreateConfig();
 
+/**
+ * @brief Checks for changes to the filesystem
+ * 
+ * @return bool 
+ */
 bool check_fs_changed();
+
+/**
+ * @brief Sets the file changed flag to a certain state
+ * 
+ * @param state The state to set
+ */
 void set_fs_changed(bool state);
 
+/**
+ * @brief Keycode data structure
+ * @details Smallest part of the data structure. Combines keycode, modifier, reportID and a immediateSend flag.
+ * 
+ */
 typedef struct Keysycode{
+  /**
+   * @brief The pressed key.
+   * 
+   */
   uint8_t keycode;
+  /**
+   * @brief modifier can be sent along with the key and modifies the generated input (e.g.: SHIFT).
+   * 
+   */
   uint8_t modifier;
+  /**
+   * @brief identifies the sending peripheral (e.g.: keyboard, gamepad, etc.).
+   * 
+   */
   uint8_t reportID;
+  /**
+   * @brief If the immediateSend flag is set in a keysycode, the sending peripheral (USB or Bluetooth) send the buffered packet with all accumulated keycodes.
+   * This is used to clear the send buffer when the modifier changes as a HID packet can send up to 6 keycodes but only one modifier.
+   * 
+   */
   uint8_t immediateSend;
 }keysycode;
 
+/**
+ * @brief Colour mode datatype. Used to set the colour mode of a key.
+ * 
+ */
 typedef enum{
+
+  /// @brief Applies the layer colour mode to the key (default).
   no_override = 0,
+
+  /// @brief Changes colour to a constant value regardless of key pressed state.
   const_color,
+
+  /// @brief Changes colour if the key is pressed.
   pressed,
+
+  /// @brief Changes colour if the key is not pressed.
   not_pressed,
+
+  /// @brief Toggles colour on every key activation.
   toggle,
-  midi_bound,     // only woks if MIDI CC command was bound for Key. Uses same channel and number as set in key
+
+  /**
+   * @brief Reacts to the current MIDI state bound to the key.
+   * @details Only woks if MIDI CC command was bound for Key. Uses same channel and number as set in key.
+   */
+  midi_bound,
+
+  /// @brief Disables the LED regardless of layer colour mode.
   disabled
 }color_mode_t;
 
+/**
+ * @brief Colour wrapper
+ * 
+ */
 typedef struct{
+  /// @brief Red value (0-255)
   uint8_t r;
+  /// @brief Green value (0-255)
   uint8_t g;
+  /// @brief Blue value (0-255)
   uint8_t b;
 }colour;
 

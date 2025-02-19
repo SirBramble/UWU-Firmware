@@ -1,3 +1,14 @@
+/**
+ * @file ACOM_fader.h
+ * @author Bramble
+ * @brief Header file for VMI ACOM Module
+ * @version 1.0
+ * @date 2025-02-18
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #ifndef ACOM_FADER_H
 #define ACOM_FADER_H
 

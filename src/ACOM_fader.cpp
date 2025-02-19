@@ -1,3 +1,14 @@
+/**
+ * @file ACOM_fader.cpp
+ * @author Bramble
+ * @brief CPP file for VMI ACOM Module
+ * @version 1.0
+ * @date 2025-02-18
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "ACOM_fader.h"
 
 acom::acom(String moduleName, uint8_t i2c_addr, int update_flag_gpio, uint16_t update_interval) : module(moduleName)

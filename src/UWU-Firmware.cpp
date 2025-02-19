@@ -1,3 +1,13 @@
+/**
+ * @file UWU-Firmware.cpp
+ * @author Bramble
+ * @brief Main File
+ * @version 1.0
+ * @date 2025-02-18
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
 #include <Arduino.h>
 
 #include "modules.h"

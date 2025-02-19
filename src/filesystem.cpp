@@ -48,6 +48,7 @@ int32_t msc_write_cb (uint32_t lba, uint8_t* buffer, uint32_t bufsize)
 
 // Callback invoked when WRITE10 command is completed (status received and accepted by host).
 // used to flush any pending cache.
+// sets fs_changed flag.
 void msc_flush_cb (void)
 {
   // sync with flash
